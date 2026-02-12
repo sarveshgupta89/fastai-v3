@@ -65,4 +65,5 @@ async def analyze(request):
 
 if __name__ == '__main__':
     if 'serve' in sys.argv:
+        asyncio.set_event_loop_policy(asyncio.DefaultEventLoopPolicy())
         uvicorn.run(app=app, host='0.0.0.0', port=5000, log_level="info")
